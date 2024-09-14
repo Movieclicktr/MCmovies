@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MovieClick</title>
+<style>
+body {
+font-family: 'Roboto', sans-serif;
+margin: 0;
+padding: 0;
+background: linear-gradient(135deg, #1e1e1e, #121212);
+color: #ffffff;
+overflow: auto; /* Allow scrolling */
+position: relative;
+}
+.container {
+width: 80%;
+margin: auto;
+overflow: hidden;
+}
+
+.search-bar {
+margin: 20px 0;
+text-align: center;
+}
+
+.search-bar input {
+padding: 10px;
+width: 70%;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+margin-right: 10px;
+transition: all 0.3s ease;
+background-color: #333333;
+color: #ffffff;
+}
+
+.search-bar input:focus {
+outline: none;
+box-shadow: 0 0 10px rgba(255, 87, 34, 0.5);
+}
+
+.search-bar button {
+padding: 10px;
+font-size: 16px;
+cursor: pointer;
+border: none;
+border-radius: 5px;
+background-color: #ff5722;
+color: #ffffff;
+transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar button:hover {
+background-color: #e64a19;
+transform: scale(1.05);
+}
+
+.show {
+margin: 20px 0;
+padding: 20px;
+background: #2a2a2a;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+cursor: pointer;
+display: flex;
+align-items: center;
+border-radius: 10px;
+transition: transform 0.3s, background 0.3s;
+}
+
+.show img {
+width: 150px;
+height: auto;
+margin-right: 20px;
+border-radius: 10px;
+transition: transform 0.3s;
+}
+
+}
+
+.show-info {
+display: none;
+margin-top: 20px;
+}
+
+iframe {
+width: 150%;
+height: 550px; /* Increased height */
+border: none;
+border-radius: 10px;
+transition: all 0.3s ease;
+}
+
+iframe:hover {
+box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
+  .code-entry {
+      text-align: center;
+      margin-top: 50px;
+  }
+  .code-entry input {
+      padding: 10px;
+      font-size: 18px;
+      margin-right: 10px;
+  }
+  .code-entry button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+  }
+  .code-entry button:hover {
+      background-color: #555;
+  }
+.button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+            animation: jump 1s infinite;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .tiktok {
+            background: linear-gradient(to right, red, blue);
+        }
+
+        .discord {
+            background: linear-gradient(to right, white, blue);
+            color: black;
+        }
+
+        @keyframes jump {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
+</style>
+</head>
+<body>
+  </div>
+<div class="container">
+<div class="search-bar">
+<div class="loading-screen" id="loadingScreen">
+</div>
+  Use desktop site to see better
+<input type="text" id="searchInput" placeholder="Search for a show...">
+<button onclick="searchShow()">Search</button>
+  <a href="https://discord.gg/ayfpvYf2" class="button">Discord</a>
+    <a href="https://www.tiktok.com/@movieclicktro" class="button">TikTok</a>
+</div>
+<div class="show" onclick="showInfo('tt22022452')">
+<img id="banner-tt22022452" src="" alt="Inside Out 2 Banner">
+<div>
+<h2>Inside Out 2</h2>
+<div class="show-info" id="info-tt22022452">
+<p id="actors-tt22022452"></p>
+<iframe src="https://vidsrc.xyz/embed/tv/tt22022452" referrerpolicy="origin" allowfullscreen sandbox="allow-scripts allow-same-origin"></iframe>
+</div>
+</div>
+</div>
+<div class="show" onclick="showInfo('tt7587890')">
+<img id="banner-tt7587890" src="" alt="The Rookie Banner">
+<div>
+<h2>The Rookie</h2>
+<div class="show-info" id="info-tt7587890">
+<p id="actors-tt7587890"></p>
+<iframe src="https://vidsrc.xyz/embed/tv/tt7587890" referrerpolicy="origin" allowfullscreen sandbox="allow-scripts allow-same-origin"></iframe>
+</div>
+</div>
+</div>
+<div class="show" onclick="showInfo('tt6111130')">
+<img id="banner-tt6111130" src="" alt="S.W.A.T. Banner">
+<div>
+<h2>S.W.A.T.</h2>
+<div class="show-info" id="info-tt6111130">
+<p id="actors-tt6111130"></p>
+<iframe src="https://vidsrc.xyz/embed/tv/tt6111130" referrerpolicy="origin" allowfullscreen sandbox="allow-scripts allow-same-origin"></iframe>
+</div>
+</div>
+</div>
+<div class="show" onclick="showInfo('tt18076310')">
+<img id="banner-tt18076310" src="" alt="The Rookie: Feds Banner">
+<div>
+<h2>The Rookie: Feds</h2>
+<div class="show-info" id="info-tt18076310">
+<p id="actors-tt18076310"></p>
+<iframe src="https://vidsrc.xyz/embed/tv/tt18076310" referrerpolicy="origin" allowfullscreen sandbox="allow-scripts allow-same-origin"></iframe>
+</div>
+</div>
+</div>
+<div class="show" onclick="showInfo('tt6470478')">
+<img id="banner-tt6470478" src="" alt="The Good Doctor Banner">
+<div>
+<h2>The Good Doctor</h2>
+<div class="show-info" id="info-tt6470478">
+<p id="actors-tt6470478"></p>
+<iframe src="https://vidsrc.xyz/embed/tv/tt6470478" referrerpolicy="origin" allowfullscreen sandbox="allow-scripts allow-same-origin"></iframe>
+</div>
+</div>
+</div>
+</div>
+  
+<script>
+  const validCodes = ["CODE123", "CODE456", "CODE789"]; // Add your valid codes here
+  const adminCode = "ADMIN123"; // Admin code
+
+  function checkCode() {
+      const code = document.getElementById('access-code').value;
+      if (validCodes.includes(code)) {
+          document.getElementById('code-entry').style.display = 'none';
+          document.getElementById('content').style.display = 'block';
+          document.getElementById('admin-panel').style.display = 'none'; // Ensure admin panel is hidden
+      } else if (code === adminCode) {
+          document.getElementById('code-entry').style.display = 'none';
+          document.getElementById('content').style.display = 'block';
+          document.getElementById('admin-panel').style.display = 'block';
+      } else {
+          document.getElementById('discord-link').style.display = 'block';
+      }
+  }
+const tmdbApiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlN2M1NTllNTNmZDRiZWE5ZjUyNDllYTk3ZTM5NDEyMyIsIm5iZiI6MTcyNDk4MjM3Mi40OTgyNTUsInN1YiI6IjY2NTdmOWRjMjAwNGJiMTk0ZjJkMWI3NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UsR5cprapo7ojqB3jlEUeJvuWLC1vTeApopk6Wj_aD8';
+const omdbApiKey = '81d16daf';
+
+async function fetchShowData(imdbId) {
+const tmdbResponse = await fetch(`https://api.themoviedb.org/3/find/${imdbId}?external_source=imdb_id`, {
+headers: {
+Authorization: `Bearer ${tmdbApiKey}`
+}
+});
+const tmdbData = await tmdbResponse.json();
+const show = tmdbData.tv_results[0];
+
+const omdbResponse = await fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=${omdbApiKey}`);
+const omdbData = await omdbResponse.json();
+
+document.getElementById(`banner-${imdbId}`).src = `https://image.tmdb.org/t/p/w500${show.poster_path}`;
+document.getElementById(`actors-${imdbId}`).innerText = `Actors: ${omdbData.Actors}`;
+}
+
+function showInfo(imdbId) {
+const infoDiv = document.getElementById(`info-${imdbId}`);
+if (infoDiv.style.display === 'none' || !infoDiv.style.display) {
+infoDiv.style.display = 'block';
+} else {
+infoDiv.style.display = 'none';
+}
+}
+
+function searchShow() {
+const input = document.getElementById('searchInput').value.toLowerCase();
+const shows = document.getElementsByClassName('show');
+for (let i = 0; i < shows.length; i++) {
+const title = shows[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+if (title.includes(input)) {
+shows[i].style.display = '';
+} else {
+shows[i].style.display = 'none';
+}
+}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+fetchShowData('tt22022452');
+fetchShowData('tt7587890');
+fetchShowData('tt6111130');
+fetchShowData('tt18076310');
+fetchShowData('tt6470478');
+});
+
+window.addEventListener('load', () => {
+const loadingScreen = document.getElementById('loadingScreen');
+setTimeout(() => {
+loadingScreen.classList.add('fade-out');
+setTimeout(() => {
+loadingScreen.style.display = 'none';
+}, 2000);
+}, 3000);
+});
+</script>
+</body>
+</html>
